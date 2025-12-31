@@ -5,7 +5,7 @@ import App from './App';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
-  throw new Error("Não foi possível encontrar o elemento raiz para montar a aplicação.");
+  throw new Error("Could not find the root element to mount the application.");
 }
 
 const root = ReactDOM.createRoot(rootElement);

@@ -1,5 +1,5 @@
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { FinancialInput } from './types';
 import { calculateComparison, formatCurrency } from './services/calculator';
 import ComparisonChart from './components/ComparisonChart';
@@ -84,7 +84,6 @@ const App: React.FC = () => {
 
       {/* Control Bar */}
       <div className="fixed top-4 right-4 z-50 flex items-center gap-3">
-        {/* Theme Switcher */}
         <button
           onClick={toggleTheme}
           className={`p-2.5 backdrop-blur-md border rounded-2xl transition-all shadow-lg ${
@@ -97,7 +96,6 @@ const App: React.FC = () => {
           {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
         </button>
 
-        {/* Language Switcher */}
         <div className={`flex items-center gap-2 backdrop-blur-md border p-1.5 rounded-2xl shadow-lg transition-colors ${
           theme === 'dark' ? 'bg-white/10 border-white/20' : 'bg-white/80 border-slate-200'
         }`}>
@@ -146,7 +144,6 @@ const App: React.FC = () => {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-8 -mt-4">
-        {/* Input Panel */}
         <section className="lg:col-span-4 space-y-6">
           <div className={`rounded-[1.5rem] shadow-2xl border transition-all duration-300 p-7 ${theme === 'dark' ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'}`}>
             <div className="flex items-center gap-3 mb-6">
@@ -288,7 +285,6 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Results Panel */}
         <section className="lg:col-span-8 space-y-6">
           <div className={`rounded-[1.5rem] shadow-2xl border-2 transition-all duration-300 overflow-hidden ${theme === 'dark' ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'}`}>
             <div className={`p-10 border-b-[8px] transition-all duration-500 ${results.isInstallmentBetter ? (theme === 'dark' ? 'bg-emerald-950/20 border-emerald-600' : 'bg-emerald-50 border-emerald-600') : (theme === 'dark' ? 'bg-orange-950/20 border-orange-600' : 'bg-orange-50 border-orange-600')}`}>
